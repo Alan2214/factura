@@ -90,6 +90,8 @@ async function generatePDF(remision, nombres, domicilio, telefono, condiciones,c
     pdf.setFontSize(14);
     pdf.text(remision, 460, 225);
 
+    
+
     const date = new Date();
     pdf.setTextColor(0,0,0);
     pdf.text(date.getUTCDate().toString(), 453, 285);
@@ -157,6 +159,6 @@ async function generatePDF(remision, nombres, domicilio, telefono, condiciones,c
     pdf.text(subtotal, 520,706);
     pdf.text(total, 520,760);
 
-    pdf.save("NotaRemisión.pdf");
+    pdf.save(date.getUTCDate().toString()+'-'+(date.getUTCMonth() + 1).toString()+'-'+date.getUTCFullYear().toString()+'_'+nombres+'_'+'NotaRemision_');
 
 }
